@@ -4,4 +4,4 @@ First, we will reflect it in an even way. See how it converges (transform it in 
 Then we reflect the odd one and see how the picture has changed. For different k, and explore it.
 Then modified by substract linear part and expore result.
 ### Result:
-![example.png]
+![Example](example.png)
