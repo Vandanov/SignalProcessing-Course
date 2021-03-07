@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-# Assume that working with right plane some function.
+# Assume that working with right plane function y=sqrt(x**7)
 
 # DEFINE FUNCTION AND PLOT PARAMETERS #
 
@@ -43,7 +43,6 @@ def get_fourier_approximation(coefficient, dot, param, max_n=N):
             for i in range(1, max_n):
                 series_sum += coefficient[i] * math.cos(i * frequency * amplitude_val)
             res.append(series_sum)
-            # TODO: duplicate, need refractoring
     elif param == "b_k":
         for amplitude_val in dot:
             series_sum = 0
@@ -128,8 +127,9 @@ def get_coefficient(n, coefficient_type):
 
 
 def get_specific_function(x):
-    # return math.sqrt(x ** 7)
-    return math.sin(4*x) + math.sin(3*x)
+    return math.sqrt(x ** 7)
+    # return math.sin(4*x) + math.sin(3*x)
+
 # This is the experiment with different function.
 # Note, that there are many spectrum in fourier series, due I'm not expansion to natural number.
 # So, in this cases there are wouldn't be 3 and 4 rectangle peak.
