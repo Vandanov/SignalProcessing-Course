@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-# Assume that working with right plane function y=sqrt(x**7)
+# Assume that working with right plane function.
 
 # DEFINE FUNCTION AND PLOT PARAMETERS #
 
@@ -15,6 +15,8 @@ L = T / 2
 frequency = 2 * math.pi / T
 N = 32  # Upper series bound
 
+# It takes me a while to understand, that there will be better to use FFT instead of dict like I did.
+# Nevertheless, it works fine in this cases, and I will edit my impl only if it need.
 odd_spectrum = dict()
 odd_linear_modified_spectrum = dict()
 
@@ -53,6 +55,7 @@ def get_fourier_approximation(coefficient, dot, param, max_n=N):
                 odd_spectrum[freq] = odd_spectrum.get(freq, 0) + coefficient[i]
             res.append(series_sum)
     elif param == "c_k":
+        # TODO: refractoring, repeated code
         for amplitude_val in dot:
             series_sum = 0
             odd_linear_modified_spectrum[0] = coefficient[0]
