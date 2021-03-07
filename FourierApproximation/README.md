@@ -4,6 +4,6 @@ First, we will reflect it in an even way. See how it converges (transform it in 
 Then we reflect the odd one and see how the picture has changed. For different k, and explore it.
 Then modified by substract linear part and expore result.
 
-After that let's discover how the spectrum will changed, dut to linear modification (*Hint:* in no way)
+After that let's discover how the spectrum will changed, due to linear modification (*Hint:* in no way)
 ### Result:
 ![Example](example_new.png)
