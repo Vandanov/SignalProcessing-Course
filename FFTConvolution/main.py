@@ -31,7 +31,7 @@ def correlate(lhs_function_val, rhs_function_val):
     out_len = len(lhs_function_val) + len(rhs_function_val) - 1
 
     lhs_extended = np.pad(lhs_function_val, (0, out_len - len(lhs_function_val)))
-    rhs_extended = np.pad(rhs_function_val, (out_len - len(rhs_function_val), 0))
+    rhs_extended = np.pad(rhs_function_val, (0, out_len - len(rhs_function_val)))
     res = []
     for n in range(0, out_len):
         tmp_sum = 0
@@ -49,7 +49,7 @@ def correlate_via_fft(lhs_function_val, rhs_function_val):
 
     fft1 = np.fft.fft(lhs_extended)
     fft2 = np.fft.fft(rhs_extended)
-    return np.fft.fftshift((np.fft.ifft(np.conj(fft1) * fft2)))
+    return np.fft.ifft(np.conj(fft1) * fft2)
 
 
 def init_axis(figure, pos, title_name, x_name='Time (seconds)', y_name='Amplitude'):
